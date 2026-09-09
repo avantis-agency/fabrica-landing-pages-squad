@@ -1,0 +1,16 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "lp-copywriter-research-output",
+  "title": "Lp Copywriter Research Output",
+  "description": "Output of the *research task (Quill). Audience and angle research that informs every section's copy.",
+  "type": "object",
+  "required": [
+    "copyResearch"
+  ],
+  "properties": {
+    "copyResearch": {
+      "type": "string",
+      "description": "copy-research.md — audience profile (who, pains, desires, objections, previous solutions tried), Schwartz awareness level with copy implication, a per-section framework + angle + key-message table, and voice & tone guidelines (words to use / avoid)."
+    }
+  }
+}

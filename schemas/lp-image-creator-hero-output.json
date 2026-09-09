@@ -1,0 +1,16 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "lp-image-creator-hero-output",
+  "title": "Lp Image Creator Hero Output",
+  "description": "Output of the *hero task (Lens). The hero image generated via nano-banana-pro.",
+  "type": "object",
+  "required": [
+    "heroImage"
+  ],
+  "properties": {
+    "heroImage": {
+      "type": "string",
+      "description": "Reference to the generated hero image saved at assets/images/hero.<ext> (16:9, min 1920px wide, 2K), plus the prompt used. Generated via mcp__nano-banana-pro__generate_image, palette-aligned with the design system, with clean space for text overlay and no burned-in text or watermarks."
+    }
+  }
+}

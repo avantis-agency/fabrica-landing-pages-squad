@@ -1,0 +1,26 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "lp-orchestrator-plan-output",
+  "title": "Lp Orchestrator Plan Output",
+  "description": "Output of the *plan task (Nova). The canonical contract every downstream agent reads.",
+  "type": "object",
+  "required": [
+    "landingPagePlan",
+    "sectionBriefs",
+    "executionOrder"
+  ],
+  "properties": {
+    "landingPagePlan": {
+      "type": "string",
+      "description": "landing-page-plan.md — product overview (name, value prop, audience, Schwartz awareness level, goal, tone) plus a per-section plan for all 11 sections (objective, key message, visual elements, CTA, notes to copywriter/designer)."
+    },
+    "sectionBriefs": {
+      "type": "string",
+      "description": "section-briefs/ — one brief per section derived from the plan, used by Quill (copy) and Pixel (design) as the per-section spec."
+    },
+    "executionOrder": {
+      "type": "string",
+      "description": "execution-order.md — ordered agent/command sequence for the 6 phases (copy, design, images, build, review)."
+    }
+  }
+}

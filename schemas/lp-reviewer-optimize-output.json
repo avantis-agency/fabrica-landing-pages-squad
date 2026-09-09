@@ -1,0 +1,22 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "lp-reviewer-optimize-output",
+  "title": "Lp Reviewer Optimize Output",
+  "description": "Output of the *optimize task (Hawk). Conversion optimization plan plus the final ship verdict.",
+  "type": "object",
+  "required": [
+    "optimizationPlan",
+    "finalVerdict"
+  ],
+  "properties": {
+    "optimizationPlan": {
+      "type": "string",
+      "description": "optimization-plan.md — improvements prioritized by impact x effort: Quick Wins (do now), Strategic Improvements (plan), and A/B test suggestions (headline, CTA, form placement, social proof) each with a hypothesis."
+    },
+    "finalVerdict": {
+      "type": "string",
+      "enum": ["SHIP", "NO_SHIP"],
+      "description": "Final ship decision derived from the review verdict: SHIP only when 0 critical and <= 2 major issues remain; otherwise NO_SHIP and the page returns to the responsible agent for fixes before shipping."
+    }
+  }
+}

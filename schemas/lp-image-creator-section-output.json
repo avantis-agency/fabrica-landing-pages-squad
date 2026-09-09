@@ -1,0 +1,16 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "lp-image-creator-section-output",
+  "title": "Lp Image Creator Section Output",
+  "description": "Output of the *section-image task (Lens). Section images generated via nano-banana-pro.",
+  "type": "object",
+  "required": [
+    "sectionImages"
+  ],
+  "properties": {
+    "sectionImages": {
+      "type": "string",
+      "description": "References to all section images saved under assets/images/<section>-<index>.<ext> (benefits 4:3, testimonial avatars 1:1, feature icons 1:1, social proof logos), each generated via mcp__nano-banana-pro__generate_image and style-consistent with the hero image and design system palette. Zero placeholders."
+    }
+  }
+}

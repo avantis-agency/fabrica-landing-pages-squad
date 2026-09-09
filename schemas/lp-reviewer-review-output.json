@@ -1,0 +1,16 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "lp-reviewer-review-output",
+  "title": "Lp Reviewer Review Output",
+  "description": "Output of the *review task (Hawk). The multi-dimensional review report and verdict.",
+  "type": "object",
+  "required": [
+    "reviewReport"
+  ],
+  "properties": {
+    "reviewReport": {
+      "type": "string",
+      "description": "review-report.md — verdict (APPROVE / NEEDS_FIXES / MAJOR_ISSUES), issue counts by severity (critical/major/minor/suggestion), each issue with location + problem + proposed fix, and dimension scores (Copy, Design, Code, Conversion, Overall out of 10). Reviews all four dimensions every time. Any critical issue or missing core section forces MAJOR_ISSUES."
+    }
+  }
+}

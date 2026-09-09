@@ -1,0 +1,135 @@
+# Capabilities canônicas de visibilidade em busca — injetadas em todo squad que publica página.
+#
+# O método vive em lib/seo-geo-aeo/. A construção da página continua
+# sendo de cada squad. Duas capabilities distintas de propósito: uma constrói com visibilidade
+# embutida (optimize), a outra é o gate que julga um artefato pronto (audit).
+
+capabilities:
+  - id: frontend.search_visibility.optimize_fabrica
+    description: >
+      Constrói ou reescreve uma página para ser encontrada, extraída e citada: decide renderização
+      no servidor (crawler de IA não executa JavaScript; confirme o comportamento vigente nos docs
+      do fornecedor), define a política de robots.txt para os crawlers de IA em TECHNICAL-SEO.md
+      (confirme os docs do fornecedor nesta execução) separando treino de
+      busca, escreve a copy em blocos answer-first com heading em forma de pergunta e um conceito por
+      seção (a recuperação é por chunk, não por página), eleva a densidade factual com número, fonte
+      e data, adiciona citação atribuída e autoria com E-E-A-T, monta o JSON-LD em @graph com
+      Organization + WebSite + WebPage e paridade obrigatória com o conteúdo visível, publica
+      llms.txt e sitemap, e declara o orçamento de LCP/INP/CLS nos limiares "good" vigentes em
+      https://web.dev/articles/vitals que limita
+      o motion. Cobre SEO técnico, SEO clássico, AEO e GEO nas quatro camadas.
+    domains: [frontend, marketing, content, growth]
+    inputs:
+      - name: target
+        type: string
+        description: Página, diretório de build, rota ou brief da página a construir.
+      - name: intent
+        type: string
+        required: false
+        description: Consultas reais do público-alvo que a página precisa atender.
+      - name: crawler_policy
+        type: string
+        required: false
+        description: >
+          Postura de crawler de IA acordada com o cliente — máxima visibilidade, citação sem treino
+          (padrão), ou fechado. Ausente = perguntar antes de escrever robots.txt.
+    outputs:
+      - name: optimized_page
+        type: file
+        description: HTML/componentes com SSR, estrutura answer-first, JSON-LD e metadata.
+      - name: site_files
+        type: file
+        description: robots.txt com política de IA declarada, sitemap.xml e llms.txt.
+      - name: performance_budget
+        type: markdown
+        description: Orçamento de LCP/INP/CLS declarado, com o trade-off de craft registrado.
+    invoke:
+      type: task
+      ref: tasks/search-visibility-optimize.md
+    examples:
+      - "otimize esta landing page para SEO, GEO e AEO"
+      - "quero aparecer citado no ChatGPT e no Perplexity quando perguntarem do meu serviço"
+      - "escreva o JSON-LD e o robots.txt desta página com política para crawler de IA"
+      - "reescreva as seções em formato answer-first para o motor conseguir recortar"
+      - "publique llms.txt e sitemap conforme a spec"
+      - "make this page citable by AI answer engines"
+    not_for:
+      - "auditar um artefato já pronto e emitir laudo (use frontend.search_visibility.audit_fabrica)"
+      - "campanha de mídia paga ou gestão de anúncios (use as capabilities de ads)"
+      - "linkbuilding, PR e assessoria de imprensa — fora do escopo desta lib"
+      - "definir a identidade visual da página (use frontend.design_language.define_fabrica)"
+    produces:
+      - "página com renderização no servidor"
+      - "JSON-LD @graph com paridade verificada"
+      - "robots.txt com política para os crawlers de IA de TECHNICAL-SEO.md"
+      - "llms.txt conforme spec"
+      - "copy em blocos answer-first"
+      - "orçamento de performance declarado"
+    keywords:
+      - seo
+      - geo
+      - aeo
+      - generative engine optimization
+      - answer engine optimization
+      - json-ld
+      - schema.org
+      - llms.txt
+      - robots.txt
+      - ssr
+      - core web vitals
+      - citabilidade
+      - answer-first
+    fidelity:
+      status: experimental
+    score_boost: 1.15
+
+  - id: frontend.search_visibility.audit_fabrica
+    description: >
+      Audita um artefato pronto (arquivo HTML, diretório de build ou URL no ar) contra o checklist
+      de visibilidade em busca e emite laudo com veredito. Roda o auditor executável, que verifica
+      38 itens automáticos em seis grupos — técnico, dados estruturados, extratibilidade, citabilidade,
+      performance estática e acessibilidade — incluindo os sete bloqueios: conteúdo no HTML do
+      servidor, ausência de noindex, política de crawler de IA declarada, paridade entre schema e
+      conteúdo visível, estrutura answer-first, orçamento de performance declarado e contraste WCAG.
+      Devolve score de 0 a 100, veredito EXEMPLAR/SOLID/WEAK/FAIL, e correção concreta por item, além
+      da lista explícita do que não foi verificado.
+    domains: [frontend, marketing, qa, analytics]
+    inputs:
+      - name: artifact
+        type: string
+        description: Caminho de arquivo HTML, diretório de build, ou URL no ar.
+    outputs:
+      - name: audit_report
+        type: markdown
+        description: Laudo com PASS/FAIL por item, score, veredito e correções obrigatórias.
+      - name: audit_json
+        type: json
+        description: Mesmo laudo em JSON, para gate de CI.
+    invoke:
+      type: task
+      ref: tasks/search-visibility-audit.md
+    examples:
+      - "audite esta landing page antes de eu publicar"
+      - "essa página está pronta para ser citada por IA?"
+      - "roda o gate de SEO/GEO/AEO no build e me diz o que falta"
+      - "audit this URL for AI search visibility"
+    not_for:
+      - "construir ou reescrever a página (use frontend.search_visibility.optimize_fabrica)"
+      - "auditoria completa de acessibilidade com leitor de tela — este gate cobre só a parte estática"
+      - "medição de citação em ChatGPT/Perplexity ao longo do tempo — isso é prompt set, ver MEASUREMENT.md"
+    produces:
+      - "laudo com score e veredito"
+      - "lista de bloqueios em FAIL"
+      - "correções concretas por item"
+      - "JSON para gate de CI"
+    keywords:
+      - auditoria seo
+      - gate
+      - checklist
+      - lighthouse
+      - core web vitals
+      - schema validation
+      - ai visibility audit
+    fidelity:
+      status: experimental
+    score_boost: 1.1

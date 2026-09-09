@@ -1,0 +1,16 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "lp-designer-design-section-output",
+  "title": "Lp Designer Design Section Output",
+  "description": "Output of the *design-section task (Pixel). Per-section design specs the developer implements.",
+  "type": "object",
+  "required": [
+    "sectionDesigns"
+  ],
+  "properties": {
+    "sectionDesigns": {
+      "type": "string",
+      "description": "Per-section design briefs following templates/section-design-brief-template.md: responsive layout (desktop/tablet/mobile), visual hierarchy, element-by-element specs (font, size, weight, color, spacing using design tokens), CTA button spec, image brief for Lens (description, aspect ratio, dominant colors, mood), animations, and accessibility notes (WCAG AA contrast, 44x44px touch targets)."
+    }
+  }
+}

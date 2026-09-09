@@ -1,0 +1,16 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "lp-copywriter-write-section-output",
+  "title": "Lp Copywriter Write Section Output",
+  "description": "Output of the *write-section task (Quill). Final copy for the 11 landing page sections.",
+  "type": "object",
+  "required": [
+    "sectionCopy"
+  ],
+  "properties": {
+    "sectionCopy": {
+      "type": "string",
+      "description": "Per-section copy following templates/section-copy-template.md: headline/title, supporting copy, CTA text, section-specific elements (trust line, pain copy, testimonials, benefit titles, urgency, guarantee, etc.), plus the framework used and the rationale for each section."
+    }
+  }
+}

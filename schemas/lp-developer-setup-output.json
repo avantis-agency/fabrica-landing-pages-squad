@@ -1,0 +1,16 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "lp-developer-setup-output",
+  "title": "Lp Developer Setup Output",
+  "description": "Output of the *setup task (Stack). The scaffolded frontend project.",
+  "type": "object",
+  "required": [
+    "projectStructure"
+  ],
+  "properties": {
+    "projectStructure": {
+      "type": "string",
+      "description": "Scaffolded vanilla HTML/CSS/JS project: directory tree (src/styles, src/scripts, assets/images, public), DESIGN.md encoded as CSS custom properties, base index.html with meta tags, font preloads and a skip-to-content link. Bun scripts if a toolchain exists."
+    }
+  }
+}

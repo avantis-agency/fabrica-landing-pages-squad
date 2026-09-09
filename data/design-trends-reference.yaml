@@ -1,0 +1,108 @@
+# Design trends snapshot. Not current fashion.
+# Resolve live via WebSearch with a date this run.
+# Dated claims live in references/state-of-the-art.md. Do not copy this list into agents as "now".
+
+trends_snapshot:
+  layout:
+    hot:
+      - name: Bento Grid
+        description: "Grid assimétrico inspirado no Bento Box japonês"
+        use_for: [benefits, features]
+      - name: Asymmetric Layouts
+        description: "Layouts não simétricos com tension visual"
+        use_for: [hero, problem]
+      - name: Scroll-Driven Narratives
+        description: "Storytelling via scroll com animações"
+        use_for: [full-page]
+      - name: Oversized Hero
+        description: "Hero ocupando 100vh com tipografia grande"
+        use_for: [hero]
+    stable:
+      - name: Split Screen
+        description: "Duas colunas 50/50 ou 60/40"
+        use_for: [hero, solution]
+      - name: Card-Based
+        description: "Cards para benefícios, features, testimonials"
+        use_for: [benefits, features, testimonials]
+    declining:
+      - name: Parallax Scrolling
+        description: "Overused, pode impactar performance"
+      - name: Full-Width Carousels
+        description: "Baixo engagement, problemas de UX"
+
+  typography:
+    hot:
+      - name: Variable Fonts
+        description: "Uma font com múltiplos pesos/widths"
+        benefit: "Performance + flexibilidade"
+      - name: Serif Revival
+        description: "Serifs modernas para headlines (elegância)"
+        examples: ["Playfair Display", "DM Serif Display", "Fraunces"]
+      - name: Oversized Type
+        description: "Headlines 72px+ desktop, 36px+ mobile"
+      - name: Mixed Serif + Sans
+        description: "Serif para heading, sans para body"
+    stable:
+      - name: Inter/System Fonts
+        description: "Sans-serif clean para body text"
+        examples: ["Inter", "DM Sans", "Plus Jakarta Sans"]
+
+  color:
+    hot:
+      - name: Monochrome + Accent
+        description: "Base neutra com uma cor accent forte"
+      - name: Warm Neutrals
+        description: "Beiges, creams, warm grays em vez de pure white"
+      - name: Gradient Subtlety
+        description: "Gradientes sutis, quase imperceptíveis"
+      - name: Dark Mode Default
+        description: "Dark mode como opção principal"
+    stable:
+      - name: Bold Primary CTA
+        description: "CTA em cor vibrante contrastante"
+    declining:
+      - name: Neon/Cyberpunk
+        description: "Saturação extrema está saindo de moda"
+      - name: Excessive Gradients
+        description: "Multi-color gradients exagerados"
+
+  effects:
+    hot:
+      - name: Glassmorphism Refined
+        description: "Blur sutil + transparência (não exagerado)"
+      - name: Micro-Interactions
+        description: "Hover effects sutis, scroll-triggered animations"
+      - name: 3D Elements
+        description: "Elementos 3D sutis, não scene inteira"
+      - name: Grain/Noise Textures
+        description: "Textura sutil em backgrounds"
+    stable:
+      - name: Smooth Shadows
+        description: "Sombras multi-layer sutis"
+      - name: Rounded Corners
+        description: "Border-radius 8-16px"
+    declining:
+      - name: Heavy Parallax
+        description: "Parallax complexo"
+      - name: Video Backgrounds
+        description: "Performance heavy, mobile issues"
+
+  imagery:
+    hot:
+      - name: AI-Generated
+        description: "Imagens únicas geradas por IA (nosso approach!)"
+      - name: Organic Shapes
+        description: "Blobs, curves, formas naturais"
+      - name: Abstract Illustrations
+        description: "Ilustrações abstratas custom"
+    declining:
+      - name: Generic Stock Photos
+        description: "Pessoas sorrindo em escritórios — genérico demais"
+
+research_sources:
+  - "Awwwards (awwwards.com) — design premiado"
+  - "Lapa.ninja — landing page gallery"
+  - "Land-book (land-book.com) — curadoria de LPs"
+  - "Dribbble — tendências de design"
+  - "Behance — projetos de referência"
+  - "Web Design Inspiration (webdesign-inspiration.com)"

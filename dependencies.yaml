@@ -1,0 +1,24 @@
+# Dependency manifest for fabrica-landing-pages.
+# Not self-contained: Lens generates images via nano-banana-pro (or Flux).
+# Generated projects use Bun. Squad packages live in ~/.nirvana, never locally.
+self_contained: false
+system: []
+node: []
+python: []
+services:
+  - name: nano-banana-pro
+    type: mcp
+    required: true
+    used_by:
+      - lp-image-creator
+    tools:
+      - generate_image
+      - edit_image
+      - describe_image
+    purpose: "Generate and refine every landing-page image (hero, benefits, icons). Fallback: Flux."
+models:
+  - provider: google
+    name: gemini-3-pro-image
+    via: nano-banana-pro
+    purpose: "Default image model via nano-banana-pro (Pro / Nano Banana Pro line). Resolve the live id from the skill/MCP schema this run; snapshot in references/state-of-the-art.md."
+env_vars: []

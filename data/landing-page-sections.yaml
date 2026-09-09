@@ -1,0 +1,183 @@
+# Landing Page Sections — Anatomia Completa
+# Referência: Unbounce, HubSpot, ConvertKit best practices
+
+sections:
+  - id: navigation
+    name: Navigation/Header
+    order: 1
+    priority: high
+    omit_on: [capture, paid-traffic]
+    note: >
+      Sales pages keep logo + 3-4 links + CTA. Capture / paid-traffic pages
+      drop outbound links (logo + one CTA only). Source of the default:
+      Unbounce via Send It Rising, 2026-06-01 (10-15% better conversion).
+      Re-read that source if the number would change the set.
+    requires_copy: true
+    requires_image: false
+    requires_design: true
+    copy_elements:
+      - logo_text
+      - nav_links
+      - cta_button_text
+    description: >
+      Logo, links de navegação (max 5) e CTA button.
+      Sticky on scroll. Hamburger em mobile.
+
+  - id: hero
+    name: Hero Section
+    order: 2
+    priority: critical
+    requires_copy: true
+    requires_image: true
+    requires_design: true
+    copy_elements:
+      - headline
+      - supporting_copy
+      - primary_cta
+      - secondary_cta
+    image_type: hero
+    image_aspect: "16:9"
+    description: >
+      Seção mais importante. Headline magnético + supporting copy +
+      hero image impressionante + CTA primário. Deve capturar atenção
+      em 3 segundos.
+
+  - id: social-proof-bar
+    name: Social Proof Bar
+    order: 3
+    priority: high
+    requires_copy: true
+    requires_image: false
+    requires_design: true
+    copy_elements:
+      - trust_line
+      - company_names
+    description: >
+      Barra com logos de empresas/clientes em grayscale.
+      "Usado por X+ empresas" ou "Confiado por..."
+
+  - id: problem-agitation
+    name: Problem/Agitation
+    order: 4
+    priority: critical
+    requires_copy: true
+    requires_image: false
+    requires_design: true
+    copy_elements:
+      - subheadline
+      - pain_copy
+      - transition_to_solution
+    description: >
+      Identifica e amplifica a dor do público-alvo.
+      Subheadline + supporting copy emocional.
+      Transição suave para a solução.
+
+  - id: solution-demo
+    name: Solution/Demo
+    order: 5
+    priority: critical
+    requires_copy: true
+    requires_image: false
+    requires_design: true
+    copy_elements:
+      - form_header
+      - form_supporting_copy
+      - cta_button_text
+      - gdpr_text
+    description: >
+      Formulário de captura ou demo do produto.
+      Form header com benefício + campos mínimos + CTA + GDPR.
+
+  - id: testimonials
+    name: Testimonials/Social Proof
+    order: 6
+    priority: high
+    requires_copy: true
+    requires_image: true
+    requires_design: true
+    copy_elements:
+      - testimonial_quotes
+      - testimonial_names
+      - testimonial_titles
+    image_type: avatar
+    image_aspect: "1:1"
+    image_count: 3
+    description: >
+      Depoimentos com resultados específicos.
+      Foto circular + quote + nome + cargo + empresa.
+
+  - id: reinforcing-statement
+    name: Reinforcing Statement
+    order: 7
+    priority: medium
+    requires_copy: true
+    requires_image: false
+    requires_design: true
+    copy_elements:
+      - reinforcing_text
+    description: >
+      Frase de reforço que mantém interesse durante scroll.
+      Full-width band com background contrastante.
+
+  - id: benefits
+    name: Benefits
+    order: 8
+    priority: critical
+    requires_copy: true
+    requires_image: true
+    requires_design: true
+    copy_elements:
+      - benefit_titles
+      - benefit_descriptions
+    image_type: benefit
+    image_aspect: "4:3"
+    image_count: 3
+    description: >
+      3 benefícios principais com imagem, título e descrição.
+      Título = resultado, descrição = como funciona.
+
+  - id: features
+    name: Features
+    order: 9
+    priority: high
+    requires_copy: true
+    requires_image: false
+    requires_design: true
+    copy_elements:
+      - feature_titles
+      - feature_descriptions
+    description: >
+      3-6 features adicionais com ícones.
+      Grid layout. Feature conecta a benefício.
+
+  - id: final-cta
+    name: Final CTA
+    order: 10
+    priority: critical
+    requires_copy: true
+    requires_image: false
+    requires_design: true
+    copy_elements:
+      - urgency_text
+      - cta_button_text
+      - guarantee_text
+      - subtext
+    description: >
+      Último call-to-action antes do footer.
+      Repete oferta + urgência + garantia + CTA.
+
+  - id: footer
+    name: Footer
+    order: 11
+    priority: medium
+    requires_copy: true
+    requires_image: false
+    requires_design: true
+    copy_elements:
+      - company_name
+      - tagline
+      - nav_links
+      - legal_text
+    description: >
+      Logo, tagline, links essenciais, copyright, privacy.
+      Dark background, minimalista.

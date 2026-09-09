@@ -1,0 +1,166 @@
+{
+  "schema": 3,
+  "kind": "squad",
+  "slug": "fabrica-landing-pages",
+  "contract_version": "5.1.2",
+  "surface_hash": "12e21599b36bb213",
+  "prose_hash": "f406f0e77b576495",
+  "entries": {
+    "agent:agents/lp-copywriter.md": {
+      "type": "agent",
+      "hash": "8b1895bdae895f93"
+    },
+    "agent:agents/lp-designer.md": {
+      "type": "agent",
+      "hash": "4dd002dee45774da"
+    },
+    "agent:agents/lp-developer.md": {
+      "type": "agent",
+      "hash": "6d1a3ec7464bdee8"
+    },
+    "agent:agents/lp-image-creator.md": {
+      "type": "agent",
+      "hash": "c9634d48dfb06e39"
+    },
+    "agent:agents/lp-orchestrator.md": {
+      "type": "agent",
+      "hash": "b956414347539ffd"
+    },
+    "agent:agents/lp-reviewer.md": {
+      "type": "agent",
+      "hash": "f73fc5fa7805dc6f"
+    },
+    "capability:frontend.design_language.define_fabrica": {
+      "type": "capability",
+      "binding": "workflow:workflows/design-language",
+      "routing": [
+        "domain:branding",
+        "domain:frontend",
+        "domain:marketing",
+        "produces:anti-slop-report",
+        "produces:design-md"
+      ],
+      "hash": "d97d66a00b2830a0"
+    },
+    "capability:frontend.search_visibility.audit_fabrica": {
+      "type": "capability",
+      "binding": "workflow:workflows/search-visibility-audit",
+      "routing": [
+        "domain:analytics",
+        "domain:frontend",
+        "domain:marketing",
+        "domain:qa",
+        "produces:search-audit-json",
+        "produces:search-audit-report"
+      ],
+      "hash": "c8c546a8e050f40b"
+    },
+    "capability:frontend.search_visibility.optimize_fabrica": {
+      "type": "capability",
+      "binding": "workflow:workflows/search-visibility-optimize",
+      "routing": [
+        "domain:content",
+        "domain:frontend",
+        "domain:growth",
+        "domain:marketing",
+        "produces:json-ld-graph",
+        "produces:llms-txt",
+        "produces:performance-budget",
+        "produces:robots-txt",
+        "produces:search-optimized-page"
+      ],
+      "hash": "c9f83a64cee56a5c"
+    },
+    "capability:marketing.full_landing_page.execute_fabrica": {
+      "type": "capability",
+      "binding": "workflow:workflows/full-landing-page",
+      "routing": [
+        "domain:frontend",
+        "domain:marketing",
+        "produces:copy-research",
+        "produces:design-md",
+        "produces:hero-image",
+        "produces:landing-page-html",
+        "produces:landing-page-plan",
+        "produces:optimization-plan",
+        "produces:review-report",
+        "produces:section-copy",
+        "produces:section-design-specs",
+        "produces:section-images"
+      ],
+      "hash": "e215fd5f7988389a"
+    },
+    "task:tasks/design-language-define.md": {
+      "type": "task",
+      "hash": "c243307d17f1865b"
+    },
+    "task:tasks/lp-copywriter-research.md": {
+      "type": "task",
+      "hash": "1b6c09e9661d547e"
+    },
+    "task:tasks/lp-copywriter-write-section.md": {
+      "type": "task",
+      "hash": "dde1065cee6a2744"
+    },
+    "task:tasks/lp-designer-design-section.md": {
+      "type": "task",
+      "hash": "6bba2c2aa07f40a5"
+    },
+    "task:tasks/lp-developer-assemble.md": {
+      "type": "task",
+      "hash": "f38a1f608c60d857"
+    },
+    "task:tasks/lp-developer-build-section.md": {
+      "type": "task",
+      "hash": "f5f1af7b13900a05"
+    },
+    "task:tasks/lp-developer-setup.md": {
+      "type": "task",
+      "hash": "0436181ba56ebcaa"
+    },
+    "task:tasks/lp-image-creator-hero.md": {
+      "type": "task",
+      "hash": "00a1bd69b3d79b3e"
+    },
+    "task:tasks/lp-image-creator-section.md": {
+      "type": "task",
+      "hash": "95e6a43fdba7c36e"
+    },
+    "task:tasks/lp-orchestrator-plan.md": {
+      "type": "task",
+      "hash": "463d8d2d42455cd3"
+    },
+    "task:tasks/lp-reviewer-optimize.md": {
+      "type": "task",
+      "hash": "7f8e3d68f88097f8"
+    },
+    "task:tasks/lp-reviewer-review.md": {
+      "type": "task",
+      "hash": "d41fa255e4ac5bc1"
+    },
+    "task:tasks/search-visibility-audit.md": {
+      "type": "task",
+      "hash": "bfa329ee05122926"
+    },
+    "task:tasks/search-visibility-optimize.md": {
+      "type": "task",
+      "hash": "18b58309cf3a7107"
+    },
+    "workflow:workflows/design-language": {
+      "type": "workflow",
+      "hash": "a6448427a5dedf78"
+    },
+    "workflow:workflows/full-landing-page": {
+      "type": "workflow",
+      "hash": "f1b23275415a22ef"
+    },
+    "workflow:workflows/search-visibility-audit": {
+      "type": "workflow",
+      "hash": "6889f7d02e554e87"
+    },
+    "workflow:workflows/search-visibility-optimize": {
+      "type": "workflow",
+      "hash": "9b9f3e80fd4c9d7d"
+    }
+  }
+}

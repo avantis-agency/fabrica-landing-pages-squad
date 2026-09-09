@@ -1,0 +1,16 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "lp-developer-assemble-output",
+  "title": "Lp Developer Assemble Output",
+  "description": "Output of the *assemble task (Stack). The complete landing page ready for build.",
+  "type": "object",
+  "required": [
+    "assembledPage"
+  ],
+  "properties": {
+    "assembledPage": {
+      "type": "string",
+      "description": "The full landing page: header (or logo+CTA) + main (shipped sections in plan order) + footer, with title/description/Open Graph/Twitter/canonical/JSON-LD, font preload, critical CSS, lazy-load except hero, srcset, and a Bun dist/ targeting Lighthouse >= 95 on the Lighthouse this run resolves plus current LCP/INP/CLS 'good' budgets from web.dev/articles/vitals."
+    }
+  }
+}

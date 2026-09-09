@@ -1,0 +1,16 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "lp-developer-build-section-output",
+  "title": "Lp Developer Build Section Output",
+  "description": "Output of the *build-section task (Stack). Each section as production-ready code.",
+  "type": "object",
+  "required": [
+    "builtSections"
+  ],
+  "properties": {
+    "builtSections": {
+      "type": "string",
+      "description": "Each landing page section built as semantic HTML (section with id + aria-labelledby, correct heading hierarchy, descriptive alt text, labeled forms) styled from the design-system CSS tokens (zero hardcoded hex/px/font), responsive mobile-first across the breakpoints, with scroll-triggered animations guarded by prefers-reduced-motion. Integrates Quill's copy and Lens's images faithfully. WCAG AA contrast and 44x44px touch targets verified."
+    }
+  }
+}

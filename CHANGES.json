@@ -1,0 +1,169 @@
+{
+  "schema": 1,
+  "history": [
+    {
+      "version": "5.1.2",
+      "from_version": "5.1.1",
+      "bump": "patch",
+      "breaking": 0,
+      "changes": [
+        {
+          "type": "content_changed",
+          "id": "agent:agents/lp-copywriter.md",
+          "severity": "patch",
+          "detail": "agents/lp-copywriter.md teve o corpo alterado (interface intacta)"
+        },
+        {
+          "type": "content_changed",
+          "id": "task:tasks/design-language-define.md",
+          "severity": "patch",
+          "detail": "tasks/design-language-define.md teve o corpo alterado (interface intacta)"
+        }
+      ]
+    },
+    {
+      "version": "5.1.1",
+      "from_version": "5.1.0",
+      "bump": "patch",
+      "breaking": 0,
+      "changes": [
+        {
+          "type": "prose_changed",
+          "id": "squad:fabrica-landing-pages",
+          "severity": "patch",
+          "detail": "descrições, exemplos ou keywords de descoberta mudaram (afeta roteamento semântico, não invocação)"
+        }
+      ]
+    },
+    {
+      "version": "5.1.0",
+      "from_version": "5.0.0",
+      "bump": "minor",
+      "breaking": 0,
+      "changes": [
+        {
+          "type": "added",
+          "id": "capability:frontend.design_language.define_fabrica",
+          "severity": "additive",
+          "detail": "capability novo: frontend.design_language.define_fabrica"
+        },
+        {
+          "type": "added",
+          "id": "capability:frontend.search_visibility.audit_fabrica",
+          "severity": "additive",
+          "detail": "capability novo: frontend.search_visibility.audit_fabrica"
+        },
+        {
+          "type": "added",
+          "id": "capability:frontend.search_visibility.optimize_fabrica",
+          "severity": "additive",
+          "detail": "capability novo: frontend.search_visibility.optimize_fabrica"
+        },
+        {
+          "type": "added",
+          "id": "task:tasks/design-language-define.md",
+          "severity": "additive",
+          "detail": "task novo: tasks/design-language-define.md"
+        },
+        {
+          "type": "added",
+          "id": "task:tasks/search-visibility-audit.md",
+          "severity": "additive",
+          "detail": "task novo: tasks/search-visibility-audit.md"
+        },
+        {
+          "type": "added",
+          "id": "task:tasks/search-visibility-optimize.md",
+          "severity": "additive",
+          "detail": "task novo: tasks/search-visibility-optimize.md"
+        },
+        {
+          "type": "prose_changed",
+          "id": "squad:fabrica-landing-pages",
+          "severity": "patch",
+          "detail": "descrições, exemplos ou keywords de descoberta mudaram (afeta roteamento semântico, não invocação)"
+        }
+      ]
+    },
+    {
+      "version": "5.1.0",
+      "from_version": "5.0.0",
+      "bump": "minor",
+      "breaking": 0,
+      "changes": [
+        {
+          "type": "added",
+          "id": "capability:frontend.design_language.define_fabrica",
+          "severity": "additive",
+          "detail": "capability novo: frontend.design_language.define_fabrica"
+        },
+        {
+          "type": "added",
+          "id": "capability:frontend.search_visibility.audit_fabrica",
+          "severity": "additive",
+          "detail": "capability novo: frontend.search_visibility.audit_fabrica"
+        },
+        {
+          "type": "added",
+          "id": "capability:frontend.search_visibility.optimize_fabrica",
+          "severity": "additive",
+          "detail": "capability novo: frontend.search_visibility.optimize_fabrica"
+        },
+        {
+          "type": "added",
+          "id": "task:tasks/design-language-define.md",
+          "severity": "additive",
+          "detail": "task novo: tasks/design-language-define.md"
+        },
+        {
+          "type": "added",
+          "id": "task:tasks/search-visibility-audit.md",
+          "severity": "additive",
+          "detail": "task novo: tasks/search-visibility-audit.md"
+        },
+        {
+          "type": "added",
+          "id": "task:tasks/search-visibility-optimize.md",
+          "severity": "additive",
+          "detail": "task novo: tasks/search-visibility-optimize.md"
+        },
+        {
+          "type": "content_changed",
+          "id": "agent:agents/lp-designer.md",
+          "severity": "patch",
+          "detail": "agents/lp-designer.md teve o corpo alterado (interface intacta)"
+        },
+        {
+          "type": "content_changed",
+          "id": "agent:agents/lp-developer.md",
+          "severity": "patch",
+          "detail": "agents/lp-developer.md teve o corpo alterado (interface intacta)"
+        },
+        {
+          "type": "content_changed",
+          "id": "agent:agents/lp-reviewer.md",
+          "severity": "patch",
+          "detail": "agents/lp-reviewer.md teve o corpo alterado (interface intacta)"
+        },
+        {
+          "type": "prose_changed",
+          "id": "squad:fabrica-landing-pages",
+          "severity": "patch",
+          "detail": "descrições, exemplos ou keywords de descoberta mudaram (afeta roteamento semântico, não invocação)"
+        },
+        {
+          "type": "content_changed",
+          "id": "task:tasks/lp-reviewer-review.md",
+          "severity": "patch",
+          "detail": "tasks/lp-reviewer-review.md teve o corpo alterado (interface intacta)"
+        },
+        {
+          "type": "content_changed",
+          "id": "workflow:workflows/full-landing-page-workflow.yaml",
+          "severity": "patch",
+          "detail": "workflows/full-landing-page-workflow.yaml teve o corpo alterado (interface intacta)"
+        }
+      ]
+    }
+  ]
+}

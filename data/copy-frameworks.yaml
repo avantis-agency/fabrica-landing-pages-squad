@@ -1,0 +1,109 @@
+# Copy Frameworks — Referência Rápida
+# Baseado nos mestres: Hormozi, Ogilvy, Schwartz, Sugarman, Halbert
+
+frameworks:
+  hormozi_value_equation:
+    author: Alex Hormozi
+    book: '$100M Offers'
+    formula: "Dream Outcome × Perceived Likelihood / Time Delay × Effort & Sacrifice"
+    best_for: [hero, benefits, final-cta]
+    application: >
+      Maximizar valor percebido: resultado grande + alta probabilidade +
+      rápido + fácil. Minimizar o denominador.
+    headline_templates:
+      - "[Resultado desejado] sem [objeção principal]"
+      - "[Resultado desejado] em [prazo curto] mesmo que [objeção]"
+      - "Como [número] [pessoas] conseguiram [resultado] sem [sacrifício]"
+
+  hormozi_grand_slam:
+    author: Alex Hormozi
+    book: "$100M Offers"
+    formula: "Oferta tão boa que a pessoa se sente burra em dizer não"
+    best_for: [hero, final-cta]
+    application: >
+      Stack de valor: produto principal + bônus + garantia + urgência.
+      O valor percebido deve ser 10x o preço.
+
+  schwartz_awareness:
+    author: Eugene Schwartz
+    book: "Breakthrough Advertising"
+    levels:
+      unaware:
+        description: "Não sabe que tem o problema"
+        headline_approach: "Liderar com história ou curiosidade"
+        example: "A descoberta silenciosa que está mudando [indústria]"
+      problem_aware:
+        description: "Sabe do problema, não da solução"
+        headline_approach: 'Nomear a dor diretamente'
+        example: "Cansado de [dor específica]?"
+      solution_aware:
+        description: "Sabe que soluções existem"
+        headline_approach: "Diferenciar a solução"
+        example: "O único [categoria] que [diferencial único]"
+      product_aware:
+        description: "Sabe do seu produto"
+        headline_approach: "Prova social e oferta"
+        example: "[Número] empresas já escolheram [produto]"
+      most_aware:
+        description: "Só precisa do deal"
+        headline_approach: 'Oferta direta'
+        example: "[Produto] — [desconto/oferta] só até [data]"
+    best_for: [hero, problem-agitation]
+
+  sugarman_slippery_slide:
+    author: Joseph Sugarman
+    book: "The Adweek Copywriting Handbook"
+    principle: "Cada frase deve fazer o leitor querer ler a próxima"
+    best_for: [problem-agitation, solution-demo, supporting-copy]
+    techniques:
+      - "Primeiro parágrafo: máximo 2 frases curtas"
+      - "Seeds of curiosity: 'Mas isso não é tudo...', 'E o melhor...' "
+      - "Momentum: frases curtas no início, expandir gradualmente"
+      - "Pattern interrupt: pergunta inesperada no meio"
+
+  ogilvy_headline:
+    author: David Ogilvy
+    book: 'Ogilvy on Advertising'
+    principle: "5x mais pessoas leem o headline do que o body"
+    best_for: [hero, all-headlines]
+    rules:
+      - "Investir 80% do tempo no headline"
+      - "Headline com benefício específico"
+      - "Incluir notícia ou informação nova"
+      - "Use números específicos"
+      - "Headline que seleciona o público"
+
+  ogilvy_story:
+    author: David Ogilvy
+    principle: "Story-based selling converte melhor"
+    best_for: [testimonials, case-studies]
+    rules:
+      - "Usar formato de citação direta"
+      - "Incluir detalhes específicos (números!)"
+      - "Fonte identificável (nome + cargo + empresa)"
+
+  halbert_reason_why:
+    author: Gary Halbert
+    book: "The Boron Letters"
+    principle: "Sempre dê uma razão para o que você está pedindo"
+    best_for: [final-cta, guarantee, urgency]
+    application: >
+      "Estamos oferecendo X porque..." Dar razão para oferta,
+      para urgência, para garantia. Pessoas precisam de justificativa.
+    rules:
+      - "Encontre um mercado faminto primeiro"
+      - "A lista (audiência) é mais importante que o copy"
+      - "Teste headlines antes de qualquer outra coisa"
+
+section_framework_map:
+  navigation: [ogilvy_headline]
+  hero: [hormozi_value_equation, hormozi_grand_slam, schwartz_awareness]
+  social-proof-bar: [ogilvy_story]
+  problem-agitation: [schwartz_awareness, sugarman_slippery_slide]
+  solution-demo: [sugarman_slippery_slide, hormozi_value_equation]
+  testimonials: [ogilvy_story]
+  reinforcing-statement: [hormozi_value_equation]
+  benefits: [hormozi_value_equation]
+  features: [sugarman_slippery_slide]
+  final-cta: [hormozi_grand_slam, halbert_reason_why]
+  footer: []

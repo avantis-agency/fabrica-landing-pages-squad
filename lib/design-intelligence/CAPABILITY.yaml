@@ -1,0 +1,71 @@
+# Capability canônica de linguagem visual — injetada em todo squad que produz interface.
+#
+# O método vive em lib/design-intelligence/. A execução (gerar o HTML,
+# o componente, a página) continua sendo de cada squad. Esta capability é a etapa que vem ANTES:
+# nomear os padrões, escolher e nomear o estilo, coletar referência da fonte certa, escrever o
+# DESIGN.md e passar o gate anti-slop.
+
+capabilities:
+  - id: frontend.design_language.define_fabrica
+    description: >
+      Define e documenta a linguagem visual de uma interface antes da implementação: traduz o brief
+      para os nomes canônicos de padrão de UI (léxico NameThatUI, com papel ARIA e comportamento de
+      foco), escolhe e nomeia um estilo do atlas de vibes ou uma família estética com referência
+      real, coleta 3-5 referências das fontes certas (Refero, Mobbin, registries shadcn, galerias por
+      seção), produz um DESIGN.md no formato aberto do Google Labs (confira o status do repositório nesta execução) com tokens de cor, tipografia,
+      espaçamento, raio e componente mais o racional em prosa, verifica contraste WCAG 2.2 AA em
+      light e dark, e aplica o gate anti-slop de 6 bloqueios + 10 impressões digitais + 6 exigências
+      positivas. Entrega DESIGN.md + laudo do gate com correção por linha.
+    domains: [frontend, branding, marketing]
+    inputs:
+      - name: brief
+        type: string
+        description: O que será construído, para quem, e qual o problema do usuário.
+      - name: brand_source
+        type: string
+        required: false
+        description: >
+          Repositório, URL no ar, manual de marca ou DESIGN.md existente de onde extrair a
+          identidade. Ausente = a linguagem é criada do zero.
+      - name: constraints
+        type: string
+        required: false
+        description: Stack, orçamento de performance, exigência de acessibilidade, restrição de marca.
+    outputs:
+      - name: design_md
+        type: markdown
+        description: DESIGN.md no formato Google Labs (confira o status do repositório) — front matter de tokens + 8 seções de racional.
+      - name: anti_slop_report
+        type: markdown
+        description: Laudo do gate com PASS/FAIL por item e correção concreta por arquivo e linha.
+    invoke:
+      type: task
+      ref: tasks/design-language-define.md
+    examples:
+      - "defina a identidade visual da landing page antes de começar a codar"
+      - "extraia o design system do site atual do cliente e escreva o DESIGN.md"
+      - "escolha uma direção estética que não pareça template de IA"
+      - "qual o nome certo do componente que abre ao passar o mouse com botão dentro"
+      - "audite esta página contra o gate anti-slop e me diga o que corrigir"
+    not_for:
+      - "implementar o componente já especificado — isso é do pipeline de build do próprio squad"
+      - "auditoria de visibilidade em busca (use frontend.search_visibility.audit_fabrica)"
+      - "geração de imagem ou ilustração (use as capabilities de mídia do squad)"
+    produces:
+      - "DESIGN.md com tokens e racional"
+      - "laudo do gate anti-slop"
+      - "lista de padrões de UI nomeados com papel ARIA"
+      - "3-5 referências anotadas com o que cada uma resolve"
+    keywords:
+      - design system
+      - design.md
+      - identidade visual
+      - anti-slop
+      - tokens
+      - wcag
+      - claude design
+      - namethatui
+      - referencia de design
+    fidelity:
+      status: experimental
+    score_boost: 1.1

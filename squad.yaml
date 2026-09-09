@@ -1,0 +1,410 @@
+name: fabrica-landing-pages
+version: 6.0.0
+protocol: "6.0"
+description: >
+  Fábrica de Landing Pages - Um time de agentes de IA que trabalha em conjunto
+  para desenhar, escrever e construir páginas web de alta conversão.
+author: gutomec
+license: SUL-1.0
+slashPrefix: flp
+tags:
+  - landing-page
+  - conversion
+  - copywriting
+  - frontend
+  - marketing
+components:
+  agents:
+    - lp-orchestrator.md
+    - lp-copywriter.md
+    - lp-designer.md
+    - lp-image-creator.md
+    - lp-developer.md
+    - lp-reviewer.md
+  tasks:
+    - lp-orchestrator-plan.md
+    - lp-copywriter-research.md
+    - lp-copywriter-write-section.md
+    - design-language-define.md
+    - lp-designer-design-section.md
+    - lp-image-creator-hero.md
+    - lp-image-creator-section.md
+    - lp-developer-setup.md
+    - lp-developer-build-section.md
+    - lp-developer-assemble.md
+    - search-visibility-optimize.md
+    - lp-reviewer-review.md
+    - lp-reviewer-optimize.md
+    - search-visibility-audit.md
+  workflows:
+    - full-landing-page
+    - design-language
+    - search-visibility-optimize
+    - search-visibility-audit
+capabilities:
+  - id: marketing.full_landing_page.execute_fabrica
+    description: >
+      Fábrica de Landing Pages builds a single high-conversion landing page from a product brief:
+      awareness-matched section plan, Hormozi/Ogilvy/Schwartz copy, DESIGN.md
+      with anti-slop, generated images with zero placeholders, semantic
+      mobile-first HTML/CSS/JS (WCAG 2.2 AA), AEO/GEO files, and a SHIP/NO_SHIP
+      review. Default anatomy is 11 sections; capture pages may drop nav links.
+    domains:
+      - marketing
+      - frontend
+    invoke:
+      type: workflow
+      ref: workflows/full-landing-page
+    examples:
+      - Criar uma landing page de alta conversão do zero, das seções ao HTML em dist/
+      - Página de vendas com copy Hormozi/Schwartz, imagens geradas e frontend responsivo
+      - Pipeline plan, copy, design, imagens IA, código e review de conversão
+    produces:
+      - landing-page-plan
+      - copy-research
+      - section-copy
+      - design-md
+      - section-design-specs
+      - hero-image
+      - section-images
+      - landing-page-html
+      - review-report
+      - optimization-plan
+    outputs:
+      - name: landing_page
+        type: html
+        format: "text/html"
+        description: Assembled page plus CSS/JS/images, buildable to dist/
+      - name: review_report
+        type: markdown
+        format: "text/markdown"
+        description: Four-dimension review with SHIP or NO_SHIP
+      - name: design_md
+        type: markdown
+        format: "text/markdown"
+        description: DESIGN.md tokens plus eight rationale sections
+    example_briefs:
+      - "Preciso entregar uma landing page white-label de alta conversão para o curso do meu cliente, com copy, design, imagens e HTML responsivo"
+      - "Our agency needs a white-label landing page for a SaaS client: planning, conversion copy, generated images, responsive code and review"
+      - "Tenho uma operação de revenda e preciso construir uma página de captura completa para o infoproduto de um cliente final"
+      - "Build a reseller-ready sales page for my client's mentorship using awareness-matched copy and a trend-first visual design"
+    keywords:
+      - landing-page
+      - pagina de vendas
+      - página de vendas
+      - sales page
+      - pagina de captura
+      - página de captura
+      - copywriting
+      - copy de conversao
+      - copy de conversão
+      - hormozi
+      - ogilvy
+      - schwartz
+      - sugarman
+      - halbert
+      - hero copy
+      - social proof
+      - infoproduto
+      - nano-banana-pro
+      - imagens por ia
+      - imagens por IA
+      - wcag
+      - mobile-first
+      - html css js
+      - white-label landing page
+      - landing page white-label
+      - revenda de landing page
+      - reseller sales page
+      - cliente final
+    fidelity:
+      status: experimental
+    not_for:
+      - multi-page app
+      - aplicativo multipagina
+      - dashboard
+      - paid ads
+      - midia paga
+      - mídia paga
+      - buy a domain
+      - comprar dominio
+      - stock photos
+      - foto de estoque
+      - scroll-scrub site
+      - site cinematografico
+    acceptance:
+      - id: plan_sections_justified
+        description: "landing-page-plan.md lists every shipped section with funnel job, key message and CTA; capture pages that omit nav links record that decision"
+        blocking: true
+      - id: copy_framework_named
+        description: "section-copy.md names a framework from data/copy-frameworks.yaml and a rationale for every section"
+        blocking: true
+      - id: design_md_present
+        description: "DESIGN.md has token front matter, eight rationale sections, and an anti-slop report with no B1-B6 FAIL"
+        blocking: true
+      - id: images_real
+        description: "Every image slot is a generated file on disk; zero placeholders; testimonial faces are not invented photoreal portraits"
+        blocking: true
+      - id: html_wcag
+        description: "index.html is semantic, mobile-first, token-styled, with contrast ≥ 4.5:1 for normal text and targets ≥ 24 px (44 px on CTAs)"
+        blocking: true
+      - id: search_visibility
+        description: "robots.txt, JSON-LD @graph with visible parity, and a declared LCP/INP/CLS budget at the current 'good' thresholds on https://web.dev/articles/vitals exist"
+        blocking: true
+      - id: ship_verdict
+        description: "review-report.md records SHIP or NO_SHIP; SHIP only with 0 critical and ≤ 2 major"
+        blocking: true
+  - id: frontend.design_language.define_fabrica
+    description: >
+      Fábrica de Landing Pages defines the visual language of a landing page before implementation:
+      canonical UI pattern names with ARIA and focus, a named vibe or aesthetic
+      family, 3-5 annotated references, a DESIGN.md (tokens plus eight rationale
+      sections), WCAG 2.2 AA contrast in light and dark, and the anti-slop gate.
+    domains:
+      - frontend
+      - branding
+      - marketing
+    inputs:
+      - name: brief
+        type: string
+        description: What will be built, for whom, and the user problem
+      - name: brand_source
+        type: string
+        required: false
+        description: Repo, live URL, brand manual or existing DESIGN.md
+      - name: constraints
+        type: string
+        required: false
+        description: Stack, performance budget, accessibility or brand limits
+    outputs:
+      - name: design_md
+        type: markdown
+        format: "text/markdown"
+        description: DESIGN.md with token front matter and eight rationale sections
+      - name: anti_slop_report
+        type: markdown
+        format: "text/markdown"
+        description: Gate report with PASS/FAIL per item and file:line fixes
+    invoke:
+      type: workflow
+      ref: workflows/design-language
+    examples:
+      - defina a identidade visual da landing page antes de começar a codar
+      - extraia o design system do site atual do cliente e escreva o DESIGN.md
+      - escolha uma direção estética que não pareça template de IA
+    not_for:
+      - implement the component
+      - implementar componente
+      - SEO audit
+      - auditoria de SEO
+      - generate an image
+      - gerar imagem
+    example_briefs:
+      - preciso definir uma direção estética white-label para a landing de um cliente sem parecer template genérico
+      - pick a trend-driven visual direction for this white-label client landing page
+      - na minha operação de revenda, quero a identidade da página do cliente casada com o copy de cada seção
+      - define the look of a reseller landing page alongside the client's headline and offer copy
+    produces:
+      - design-md
+      - anti-slop-report
+    keywords:
+      - design system
+      - design.md
+      - identidade visual
+      - anti-slop
+      - tokens
+      - wcag
+      - namethatui
+      - vibe atlas
+      - direcao estetica
+      - direção estética
+      - landing page
+      - white-label design
+      - design para revenda
+      - client landing design
+    fidelity:
+      status: experimental
+    acceptance:
+      - id: design_md_shape
+        description: "DESIGN.md exists with valid front matter and eight rationale sections"
+        blocking: true
+      - id: style_named
+        description: "The style is named and separated from its nearest lookalike"
+        blocking: true
+      - id: anti_slop
+        description: "No B1-B6 block in FAIL; at most one fingerprint"
+        blocking: true
+      - id: contrast
+        description: "Every on-* / * pair has a contrast ratio ≥ 4.5:1 for normal text in light and dark"
+        blocking: true
+  - id: frontend.search_visibility.optimize_fabrica
+    description: >
+      Fábrica de Landing Pages rewrites a landing page so it can be found, extracted and cited:
+      server-rendered HTML (AI crawlers do not run JS), robots.txt for the
+      AI crawlers in TECHNICAL-SEO.md (confirm vendor docs this run) with default citation-without-training, answer-first
+      copy, factual density, JSON-LD @graph with visible parity, llms.txt,
+      sitemap, and an LCP/INP/CLS budget at the current "good" thresholds on https://web.dev/articles/vitals.
+    domains:
+      - frontend
+      - marketing
+      - content
+      - growth
+    inputs:
+      - name: target
+        type: string
+        description: Page, build directory, route or brief
+      - name: intent
+        type: string
+        required: false
+        description: Real queries the page must answer
+      - name: crawler_policy
+        type: string
+        required: false
+        description: >
+          AI crawler posture. Absent = declared premise citation-without-training
+          (search allowed, training blocked).
+    outputs:
+      - name: optimized_page
+        type: html
+        format: "text/html"
+        description: SSR HTML with answer-first structure, JSON-LD and metadata
+      - name: site_files
+        type: file
+        format: "text/plain"
+        description: robots.txt, sitemap.xml, llms.txt
+      - name: performance_budget
+        type: markdown
+        format: "text/markdown"
+        description: Declared LCP/INP/CLS budget and motion tradeoff
+    invoke:
+      type: workflow
+      ref: workflows/search-visibility-optimize
+    examples:
+      - otimize esta landing page para SEO, GEO e AEO
+      - quero aparecer citado no ChatGPT e no Perplexity quando perguntarem do meu serviço
+      - escreva o JSON-LD e o robots.txt desta página com política para crawler de IA
+      - make this page citable by AI answer engines
+    not_for:
+      - emit audit report
+      - emitir laudo
+      - paid media
+      - midia paga
+      - link building
+      - identidade visual
+    example_briefs:
+      - na landing white-label do meu cliente, reescreva as seções em answer-first sem perder a força do headline
+      - optimize this reseller client page for answer engines while keeping the offer sharp
+      - preciso entregar ao cliente final uma landing com copy citável pelo ChatGPT e ainda vendendo
+    produces:
+      - search-optimized-page
+      - json-ld-graph
+      - robots-txt
+      - llms-txt
+      - performance-budget
+    keywords:
+      - seo
+      - geo
+      - aeo
+      - generative engine optimization
+      - answer engine optimization
+      - json-ld
+      - schema.org
+      - llms.txt
+      - robots.txt
+      - ssr
+      - core web vitals
+      - citabilidade
+      - answer-first
+      - landing page
+      - inp
+      - lcp
+      - white-label seo
+      - seo para clientes
+      - reseller page seo
+    fidelity:
+      status: experimental
+    acceptance:
+      - id: auditor_pass
+        description: "bun lib/seo-geo-aeo/scripts/audit-search-visibility.ts returns score ≥ 75 and no blocking FAIL"
+        blocking: true
+      - id: html_without_js
+        description: "Main copy appears in curl -sL of the page with JavaScript disabled"
+        blocking: true
+      - id: schema_parity
+        description: "Every JSON-LD item is visible in the page DOM"
+        blocking: true
+      - id: crawler_policy_declared
+        description: "robots.txt states the crawler posture; if the brief omitted it, the premise citation-without-training is written in the report"
+        blocking: true
+  - id: frontend.search_visibility.audit_fabrica
+    description: >
+      Fábrica de Landing Pages audits a finished HTML file, build directory or live URL against the
+      search visibility checklist: 38 automatic items in six groups plus seven
+      blockers, score 0-100, verdict EXEMPLAR/SOLID/WEAK/FAIL, file:line fixes,
+      and an explicit list of what was not checked.
+    domains:
+      - frontend
+      - marketing
+      - qa
+      - analytics
+    inputs:
+      - name: artifact
+        type: string
+        description: HTML file path, build directory, or live URL
+    outputs:
+      - name: audit_report
+        type: markdown
+        format: "text/markdown"
+        description: PASS/FAIL per item, score, verdict, required fixes
+      - name: audit_json
+        type: json
+        format: "application/json"
+        description: Same report as JSON for CI
+    invoke:
+      type: workflow
+      ref: workflows/search-visibility-audit
+    examples:
+      - audite esta landing page antes de eu publicar
+      - essa página está pronta para ser citada por IA?
+      - roda o gate de SEO/GEO/AEO no build e me diz o que falta
+      - audit this URL for AI search visibility
+    not_for:
+      - rewrite the page
+      - reescrever a pagina
+      - paid media
+      - midia paga
+      - screen reader audit
+    produces:
+      - search-audit-report
+      - search-audit-json
+    example_briefs:
+      - preciso auditar a visibilidade em busca desta landing white-label antes de entregar ao cliente
+      - is this reseller sales page ready to be delivered to my client and cited by ChatGPT and Perplexity?
+      - quero o laudo de SEO e citabilidade da página de vendas que minha agência montou para o cliente final
+    keywords:
+      - auditoria seo
+      - seo audit
+      - gate
+      - checklist
+      - lighthouse
+      - core web vitals
+      - schema validation
+      - ai visibility audit
+      - landing page
+      - pagina de vendas
+      - página de vendas
+      - white-label audit
+      - auditoria para cliente
+      - reseller page audit
+    fidelity:
+      status: experimental
+    acceptance:
+      - id: thirty_eight_items
+        description: "All 38 automatic items are PASS, FAIL or N/A; none silenced"
+        blocking: true
+      - id: fail_has_line
+        description: "Every FAIL has a file:line fix"
+        blocking: true
+      - id: unverified_listed
+        description: "The report lists what was not checked"
+        blocking: true
