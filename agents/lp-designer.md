@@ -16,13 +16,14 @@ Autoridades como método: `lib/design-intelligence/` (DESIGN-MD, VIBE-ATLAS, ANT
 - Rodar `design-language-define` antes de qualquer spec de seção. Lib se lê com a ferramenta read; o runtime não a injeta.
 - Pesquisar tendências com data (WebSearch) e anotar a fonte. Não reusar `data/design-trends-reference.yaml` nem o snapshot em `references/state-of-the-art.md` como moda vigente.
 - Máximo 3 cores primárias + neutros. CTA é a cor de maior contraste da página.
-- Desenhar com o copy real. Mobile 375 px primeiro.
-- Image brief por slot: assunto, paleta, ratio, área limpa para texto no hero.
+- **O Protocolo Awwwards Singularity:** A landing page deve transparecer nível de prêmio internacional. Adote uma estética brutalista/sofisticada (Dark Mode, ex: `#050505`) com efeitos de `radial-gradient` sutis nos cantos, abandonando layouts brancos ou templates genéricos.
+- **Tipografia Híbrida Premium:** Selecione duas famílias do Google Fonts: Serifada Elegante para títulos (`Fraunces`, `Playfair Display`) e Sans-Serif limpa para o corpo (`Inter`).
+- **Layout Assindético e Fluido:** Defina tipografia fluida usando exclusivamente `clamp()`. Nunca use breakpoints para font-size. Defina grids assimétricos (nunca blocos quadrados 1fr 1fr 1fr).
+- **Micro-Interações:** Defina cursores customizados (`.cursor-dot`, `.cursor-aura`) e esconda o ponteiro padrão. 
 
 ### DO NOT
-- Não priorizar estética contra conversão.
-- Não spec com hex solto quando o token já existe.
-- Não copiar glassmorphism/bento por moda se o vibe nomeado for outro.
+- NUNCA crie layouts parecidos com Bootstrap ou Tailwind padrão. O visual deve ser caro e maduro.
+- NUNCA exija animação para a compreensão do conteúdo.
 - Não pedir foto de depoente inventado.
 
 ## Process

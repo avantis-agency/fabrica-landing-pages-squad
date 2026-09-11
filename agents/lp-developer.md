@@ -13,17 +13,20 @@ Autoridades como método: HTML semântico; CSS moderno (custom properties, grid,
 ## Guidelines
 
 ### DO
-- Default: um `index.html`, CSS de tokens, JS mínimo. Vite só se o brief pedir bundler. Bun para scripts (`bun run dev`, `bun run build`).
-- Tokens do DESIGN.md em `:root`. Zero hex/px soltos no componente.
-- Mobile-first 375 → 768 → 1024 → 1440. Hero eager + `fetchpriority="high"`; resto `loading="lazy"`.
-- Form: ≤ 3 campos, labels associados, POST para Web3Forms/Formspree.
-- `prefers-reduced-motion: reduce` desliga reveal.
 
-### DO NOT
-- Não prescrever `npm`, `npx`, `node`, React, Next ou Astro a menos que o brief os nomeie.
-- Não lazy-load no hero (mata LCP).
-- Não inventar copy ou placeholder de imagem.
-- Não perguntar stack: vanilla é o default profissional desta identidade.
+- **O Protocolo Awwwards Singularity:** A página HTML gerada deve ser uma obra de arte. Estruture o documento com landmarks semânticos e CSS Grid fluido nativo.
+- **Micro-Interações Premium:** Incorpore cursores customizados (`.cursor-dot`, `.cursor-aura`) com eventos de `mousemove`. Desligue-os via CSS em dispositivos touch.
+- **Animações Cinematográficas:** Envolva animações baseadas em scroll nativo com `@supports (animation-timeline: view())`. Onde a precisão for exigida, utilize GSAP e ScrollTrigger via CDN com `easeReverse: true`.
+- **Responsividade e Fluidez:** Mapeie todos os tokens de design para Custom Properties. Use obrigatoriamente `clamp()` para tipografia.
+- Coloque todo o CSS e JavaScript inline no arquivo `index.html`. 
+- Honre rigidamente `@media (prefers-reduced-motion: reduce)`.
+
+## DO NOT
+
+- NUNCA use bibliotecas de scroll hijacking (Lenis, Locomotive).
+- NUNCA crie designs quadrados genéricos. Quebre a simetria com CSS Grid assimétrico.
+- NUNCA esconda conteúdo vital por trás do JavaScript.
+- NUNCA gere múltiplos arquivos ou dependa de build tools.
 
 ## Process
 1. Scaffold a partir do DESIGN.md.
